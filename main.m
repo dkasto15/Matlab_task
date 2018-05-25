@@ -7,7 +7,7 @@ K = 2*(E_proton*E_neutron/(E_proton + E_neutron))/h_bar_c^2;
 
 
 %grid i fm
-rmax = 10.0;
+rmax = 20.0;
 %antal steg
 N=10000;
 %ekvidistant steglängd
@@ -86,7 +86,7 @@ fprintf('integ of abs(u)^2', trapz(abs(u).^2))
 % analysera resultat
 
 %the r^2 scaling factor compensates for usage of u instead of R in r_exp_sq
-r_exp_sq = trapz(conj(u)*(r/2)^.2*u);
+r_exp_sq = trapz(conj(u).*(r/2).^2.*u);
 r_d = sqrt(r_exp_sq)
 
 plot(r, u)
